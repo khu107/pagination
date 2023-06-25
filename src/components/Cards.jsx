@@ -7,7 +7,7 @@ function Cards(props) {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPage = 4;
+  const itemsPage = 6;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPage;
@@ -26,13 +26,13 @@ function Cards(props) {
       <div className="row  gy-3 gap-5 ">
         {currentItems.map((image) => {
           return (
-            <Card style={{ width: '18rem' }}>
+            <Card key={image.id} style={{ width: '18rem' }}>
               <Card.Img
                 variant="top"
                 src={image.url}
                 style={{ height: '300px' }}
               />
-              <Card.Body>sds</Card.Body>
+              <Card.Body>Cat {image.id}</Card.Body>
             </Card>
           );
         })}
